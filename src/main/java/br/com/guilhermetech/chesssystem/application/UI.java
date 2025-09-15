@@ -31,6 +31,12 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    // https://stackoverflow.com/questions/2979383/java-clear-the-console
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     public static ChessPosition readChessPosition(Scanner sc){
         try{
             var s = sc.nextLine();
@@ -59,9 +65,9 @@ public class UI {
             System.out.print("-");
         }else {
             if (piece.getColor() == Color.WHITE) {
-                System.out.println(ANSI_WHITE + piece + ANSI_RESET);
+                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
             }else {
-                System.out.println(ANSI_YELLOW + piece + ANSI_RESET);
+                System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
             }
         }
         System.out.print(" ");
