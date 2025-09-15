@@ -1,7 +1,6 @@
 package chess.pieces;
 
 import br.com.guilhermetech.chesssystem.boardgame.Board;
-import br.com.guilhermetech.chesssystem.boardgame.Piece;
 import chess.ChessPiece;
 import chess.Color;
 
@@ -14,5 +13,10 @@ public class Rook extends ChessPiece {
     @Override
     public String toString() {
         return "R";
+    }
+
+    @Override
+    public boolean[][] possibleMove() {
+        return new boolean[0][];
     }
 }

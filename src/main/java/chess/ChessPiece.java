@@ -4,7 +4,7 @@ import br.com.guilhermetech.chesssystem.boardgame.Board;
 import br.com.guilhermetech.chesssystem.boardgame.Piece;
 import lombok.Getter;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     @Getter
     private Color color;
