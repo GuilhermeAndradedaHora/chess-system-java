@@ -1,10 +1,10 @@
-package chess;
+package br.com.guilhermetech.chesssystem.chess;
 
 import br.com.guilhermetech.chesssystem.boardgame.Board;
 import br.com.guilhermetech.chesssystem.boardgame.Piece;
 import br.com.guilhermetech.chesssystem.boardgame.Position;
-import chess.pieces.King;
-import chess.pieces.Rook;
+import br.com.guilhermetech.chesssystem.chess.pieces.King;
+import br.com.guilhermetech.chesssystem.chess.pieces.Rook;
 
 public class ChessMatch {
 
@@ -29,6 +29,7 @@ public class ChessMatch {
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
         validateSourcePosition(source);
+        validateTargetPosition(source, target);
         Piece capturedPiece = makeMove(source, target);
         return (ChessPiece)capturedPiece;
     }
@@ -39,6 +40,12 @@ public class ChessMatch {
         }
         if (!board.piece(position).isThereAnyPossibleMove()){
             throw new ChessException("There is no possible moves for the chosen piece");
+        }
+    }
+
+    private void validateTargetPosition(Position source, Position target){
+        if (!board.piece(source).possibleMove(target)){
+            throw new ChessException("The chosen piece can't moove to target position");
         }
     }
 

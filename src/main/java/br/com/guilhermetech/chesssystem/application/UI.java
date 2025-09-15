@@ -1,9 +1,8 @@
 package br.com.guilhermetech.chesssystem.application;
 
-import chess.ChessPiece;
-import chess.ChessPosition;
-import chess.Color;
-import chess.pieces.King;
+import br.com.guilhermetech.chesssystem.chess.ChessPiece;
+import br.com.guilhermetech.chesssystem.chess.ChessPosition;
+import br.com.guilhermetech.chesssystem.chess.Color;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

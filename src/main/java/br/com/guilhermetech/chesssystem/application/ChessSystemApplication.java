@@ -1,10 +1,9 @@
-package br.com.guilhermetech.chesssystem;
+package br.com.guilhermetech.chesssystem.application;
 
-import br.com.guilhermetech.chesssystem.application.UI;
-import chess.ChessException;
-import chess.ChessMatch;
-import chess.ChessPiece;
-import chess.ChessPosition;
+import br.com.guilhermetech.chesssystem.chess.ChessException;
+import br.com.guilhermetech.chesssystem.chess.ChessMatch;
+import br.com.guilhermetech.chesssystem.chess.ChessPiece;
+import br.com.guilhermetech.chesssystem.chess.ChessPosition;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

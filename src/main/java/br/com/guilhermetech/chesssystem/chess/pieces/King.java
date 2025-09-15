@@ -1,8 +1,8 @@
-package chess.pieces;
+package br.com.guilhermetech.chesssystem.chess.pieces;
 
 import br.com.guilhermetech.chesssystem.boardgame.Board;
-import chess.ChessPiece;
-import chess.Color;
+import br.com.guilhermetech.chesssystem.chess.ChessPiece;
+import br.com.guilhermetech.chesssystem.chess.Color;
 
 public class King extends ChessPiece {
 

@@ -1,4 +1,4 @@
-package chess;
+package br.com.guilhermetech.chesssystem.chess;
 
 import br.com.guilhermetech.chesssystem.boardgame.Position;
 import lombok.Getter;
