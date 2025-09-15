@@ -25,6 +25,12 @@ public class ChessMatch {
         return mat;
     }
 
+    public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+        var position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMove();
+    }
+
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
@@ -50,8 +56,8 @@ public class ChessMatch {
     }
 
     private Piece makeMove(Position source, Position target){
-        Piece p = board.removePiece(source);
-        Piece capturedPiece = board.removePiece(target);
+        var p = board.removePiece(source);
+        var capturedPiece = board.removePiece(target);
         board.placePiece(p, target);
         return capturedPiece;
     }
@@ -69,6 +75,8 @@ public class ChessMatch {
         placeNewPiece('e', 8, new King(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
     }
+
+
 
 
 }

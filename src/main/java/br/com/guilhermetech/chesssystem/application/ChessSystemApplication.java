@@ -13,8 +13,8 @@ public class ChessSystemApplication {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        ChessMatch chessMatch = new ChessMatch();
+        var sc = new Scanner(System.in);
+        var chessMatch = new ChessMatch();
 
         while(true){
             try {
@@ -24,11 +24,15 @@ public class ChessSystemApplication {
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
+
                 System.out.println();
                 System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
 
-                ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+                var capturedPiece = chessMatch.performChessMove(source, target);
             }catch (ChessException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
