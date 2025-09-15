@@ -20,4 +20,12 @@ public class Board {
         pieces = new Piece[rows][columns];
     }
 
+    public Piece piece(Integer row, Integer column) {
+        return pieces[row][column];
+    }
+
+    public Piece piece(Position position) {
+        return piece(position.getRow(), position.getColumn());
+    }
+
 }
