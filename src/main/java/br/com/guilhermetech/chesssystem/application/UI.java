@@ -1,4 +1,4 @@
-package application;
+package br.com.guilhermetech.chesssystem.application;
 
 import chess.ChessPiece;
 

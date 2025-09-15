@@ -1,6 +1,6 @@
 package br.com.guilhermetech.chesssystem;
 
-import application.UI;
+import br.com.guilhermetech.chesssystem.application.UI;
 import chess.ChessMatch;
 
 
