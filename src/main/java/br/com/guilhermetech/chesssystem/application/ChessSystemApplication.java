@@ -5,6 +5,7 @@ import br.com.guilhermetech.chesssystem.chess.ChessMatch;
 import br.com.guilhermetech.chesssystem.chess.ChessPiece;
 import br.com.guilhermetech.chesssystem.chess.ChessPosition;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,11 +16,12 @@ public class ChessSystemApplication {
 
         var sc = new Scanner(System.in);
         var chessMatch = new ChessMatch();
+        var captured = new ArrayList<ChessPiece>();
 
         while(true){
             try {
                 UI.clearScreen();
-                UI.printMatch(chessMatch);
+                UI.printMatch(chessMatch, captured);
                 System.out.println();
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
@@ -33,6 +35,10 @@ public class ChessSystemApplication {
                 ChessPosition target = UI.readChessPosition(sc);
 
                 var capturedPiece = chessMatch.performChessMove(source, target);
+
+                if(capturedPiece == null){
+                    captured.add(capturedPiece);
+                }
             }catch (ChessException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
