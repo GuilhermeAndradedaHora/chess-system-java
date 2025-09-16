@@ -98,7 +98,8 @@ public class ChessMatch {
     }
 
     private Piece makeMove(Position source, Position target){
-        var p = board.removePiece(source);
+        var p = (ChessPiece)board.removePiece(source);
+        p.increaseMoveCount();
         var capturedPiece = board.removePiece(target);
         board.placePiece(p, target);
 
@@ -110,7 +111,8 @@ public class ChessMatch {
     }
 
     private void undoMove(Position source, Position target, Piece capturedPiece){
-        var p = board.removePiece(target);
+        var p = (ChessPiece)board.removePiece(target);
+        p.decreaseMoveCount();
         board.placePiece(p, source);
         if (capturedPiece != null){
             board.placePiece(capturedPiece, target);
