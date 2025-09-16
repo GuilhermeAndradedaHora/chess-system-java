@@ -18,7 +18,7 @@ public class ChessSystemApplication {
         var chessMatch = new ChessMatch();
         var captured = new ArrayList<ChessPiece>();
 
-        while(true){
+        while(!chessMatch.getCheckMate()){
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, captured);
@@ -48,6 +48,8 @@ public class ChessSystemApplication {
             }
 
         }
+        UI.clearScreen();
+        UI.printMatch(chessMatch, captured);
 
     }
 }
