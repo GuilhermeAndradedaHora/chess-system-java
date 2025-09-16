@@ -105,8 +105,8 @@ public class UI {
     }
 
     private static void printCapturedPieces(List<ChessPiece> capturedPieces) {
-        List<ChessPiece> white = capturedPieces.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
-        List<ChessPiece> black = capturedPieces.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
+        List<ChessPiece> white = capturedPieces.stream().filter(Objects::nonNull).filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
+        List<ChessPiece> black = capturedPieces.stream().filter(Objects::nonNull).filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 
         System.out.println("Captured Pieces:");
         System.out.print("White: ");

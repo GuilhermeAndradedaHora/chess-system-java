@@ -7,10 +7,18 @@ import lombok.Getter;
 
 public abstract class ChessPiece extends Piece {
 
-    @Getter
     private Color color;
-    @Getter
-    private Integer moveCount;
+    private int moveCount;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public int getMoveCount() {
+        return moveCount;
+    }
+
+    public void setMoveCount(Integer moveCount) {}
 
     public void increaseMoveCount(){
         moveCount++;
