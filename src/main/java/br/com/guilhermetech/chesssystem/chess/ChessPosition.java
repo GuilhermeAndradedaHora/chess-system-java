@@ -1,12 +1,9 @@
 package br.com.guilhermetech.chesssystem.chess;
 
 import br.com.guilhermetech.chesssystem.boardgame.Position;
-import lombok.Getter;
 
 public class ChessPosition {
-    @Getter
     private char column;
-    @Getter
     private Integer row;
 
     public ChessPosition(char column, Integer row) {
@@ -15,6 +12,14 @@ public class ChessPosition {
         }
         this.column = column;
         this.row = row;
+    }
+
+    public char getColumn() {
+        return column;
+    }
+
+    public Integer getRow() {
+        return row;
     }
 
     protected Position toPosition(){

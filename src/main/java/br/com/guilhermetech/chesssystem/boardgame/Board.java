@@ -1,14 +1,8 @@
 package br.com.guilhermetech.chesssystem.boardgame;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class Board {
 
-
-    @Getter
     private Integer rows;
-    @Getter
     private Integer columns;
     private Piece[][] pieces;
 
@@ -19,6 +13,14 @@ public class Board {
         this.rows = rows;
         this.columns = columns;
         pieces = new Piece[rows][columns];
+    }
+
+    public Integer getRows() {
+        return rows;
+    }
+
+    public Integer getColumns() {
+        return columns;
     }
 
     public Piece piece(Integer row, Integer column) {
