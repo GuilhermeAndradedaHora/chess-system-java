@@ -1,8 +1,5 @@
 package br.com.guilhermetech.chesssystem.boardgame;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public abstract class Piece {
 
     protected Position position;

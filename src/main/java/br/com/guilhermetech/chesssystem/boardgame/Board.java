@@ -2,11 +2,11 @@ package br.com.guilhermetech.chesssystem.boardgame;
 
 public class Board {
 
-    private Integer rows;
-    private Integer columns;
+    private int rows;
+    private int columns;
     private Piece[][] pieces;
 
-    public Board(Integer rows, Integer columns) {
+    public Board(int rows, int columns) {
         if (rows < 1 || columns < 1){
             throw new BoardException("Error creating board: There must be at least 1row and 1 column");
         }
@@ -15,11 +15,11 @@ public class Board {
         pieces = new Piece[rows][columns];
     }
 
-    public Integer getRows() {
+    public int getRows() {
         return rows;
     }
 
-    public Integer getColumns() {
+    public int getColumns() {
         return columns;
     }
 
@@ -34,7 +34,7 @@ public class Board {
         if (!positionExists(position)){
             throw new BoardException("Position does not exist");
         }
-        return piece(position.getRow(), position.getColumn());
+        return pieces[position.getRow()][position.getColumn()];
     }
 
     public void placePiece(Piece piece, Position position) {
@@ -52,7 +52,7 @@ public class Board {
         if (piece(position) == null){
             return null;
         }
-        Piece aux = piece(position);
+        var aux = piece(position);
         aux.position = null;
         pieces[position.getRow()][position.getColumn()] = null;
         return aux;

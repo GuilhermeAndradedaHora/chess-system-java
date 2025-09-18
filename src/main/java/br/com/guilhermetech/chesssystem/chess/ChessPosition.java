@@ -3,8 +3,9 @@ package br.com.guilhermetech.chesssystem.chess;
 import br.com.guilhermetech.chesssystem.boardgame.Position;
 
 public class ChessPosition {
+
     private char column;
-    private Integer row;
+    private int row;
 
     public ChessPosition(char column, Integer row) {
         if (column < 'a' || column > 'h' || row < 1 || row > 8) {
@@ -18,7 +19,7 @@ public class ChessPosition {
         return column;
     }
 
-    public Integer getRow() {
+    public int getRow() {
         return row;
     }
 
