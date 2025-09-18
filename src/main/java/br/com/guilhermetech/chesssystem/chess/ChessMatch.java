@@ -87,7 +87,7 @@ public class ChessMatch {
         // #specialmove promotion
         promoted = null;
         if (movedPiece instanceof Pawn){
-            if ((movedPiece.getColor() == Color.WHITE && target.getRow() == 0) || (movedPiece.getColor() == Color.BLACK && target.getRow() == 7)){
+            if ((movedPiece.getColor().equals(Color.WHITE) && target.getRow() == 0) || (movedPiece.getColor().equals(Color.BLACK) && target.getRow() == 7)){
                 promoted = (ChessPiece)board.piece(target);
                 promoted = replacePromotedPiece("Q");
             }
@@ -119,7 +119,7 @@ public class ChessMatch {
         }
 
         var pos = promoted.getChessPosition().toPosition();
-        var p = board.piece(pos);
+        var p = board.removePiece(pos);
         piecesOnTheBoard.remove(p);
 
         var newPiece = newPiece(type, promoted.getColor());
