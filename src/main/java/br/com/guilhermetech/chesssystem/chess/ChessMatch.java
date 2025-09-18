@@ -102,7 +102,7 @@ public class ChessMatch {
         }
 
         // #specialmove en passant
-        if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || target.getColumn() == source.getColumn() + 2)){
+        if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || target.getRow() == source.getRow() + 2)){
             enPassantVulnerable = movedPiece;
         }else {
             enPassantVulnerable = null;
@@ -170,7 +170,7 @@ public class ChessMatch {
         if (p instanceof Pawn){
             if (source.getColumn() != target.getColumn() && capturedPiece == null){
                 Position pawnPosition;
-                if (p.getColor() == Color.WHITE){
+                if (p.getColor().equals(Color.WHITE)){
                     pawnPosition = new Position(target.getRow() + 1, target.getColumn());
                 }else  {
                     pawnPosition = new Position(target.getRow() - 1, target.getColumn());
